@@ -1,0 +1,179 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+/*
+ * Bhartiya Vidyapeeth Playway School — design system.
+ * Royal Blue primary, Sky Blue secondary, white surfaces,
+ * Golden Yellow highlight, Green success, Red destructive.
+ * Light theme only (no dark mode by design).
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-chart-1: var(--primary);
+  --color-chart-2: var(--sky);
+  --color-chart-3: var(--gold);
+  --color-chart-4: var(--success);
+  --color-chart-5: var(--destructive);
+}
+
+:root {
+  --radius: 1rem;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.23 0.05 265);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.23 0.05 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.23 0.05 265);
+
+  /* Royal Blue */
+  --primary: oklch(0.45 0.21 264);
+  --primary-foreground: oklch(0.99 0 0);
+  --primary-deep: oklch(0.33 0.16 265);
+
+  /* Sky Blue */
+  --secondary: oklch(0.94 0.03 230);
+  --secondary-foreground: oklch(0.35 0.16 265);
+  --sky: oklch(0.75 0.13 231);
+  --sky-soft: oklch(0.97 0.02 231);
+
+  --muted: oklch(0.97 0.01 250);
+  --muted-foreground: oklch(0.52 0.03 258);
+  --accent: oklch(0.96 0.02 231);
+  --accent-foreground: oklch(0.35 0.16 265);
+
+  /* Golden Yellow highlight */
+  --gold: oklch(0.83 0.16 84);
+  --gold-foreground: oklch(0.28 0.07 70);
+
+  --success: oklch(0.61 0.17 150);
+  --success-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.92 0.01 250);
+  --input: oklch(0.92 0.01 250);
+  --ring: oklch(0.45 0.21 264);
+
+  --sidebar: oklch(0.98 0.01 250);
+  --sidebar-foreground: oklch(0.23 0.05 265);
+  --sidebar-primary: oklch(0.45 0.21 264);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.96 0.02 231);
+  --sidebar-accent-foreground: oklch(0.35 0.16 265);
+  --sidebar-border: oklch(0.92 0.01 250);
+  --sidebar-ring: oklch(0.45 0.21 264);
+
+  --shadow-soft: 0 10px 30px -12px oklch(0.45 0.21 264 / 0.25);
+  --shadow-card: 0 4px 20px -8px oklch(0.45 0.21 264 / 0.18);
+  --gradient-royal: linear-gradient(135deg, oklch(0.45 0.21 264), oklch(0.62 0.16 245));
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility glass-card {
+  background: color-mix(in oklab, white 78%, transparent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid color-mix(in oklab, white 60%, transparent);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility bg-royal-gradient {
+  background-image: var(--gradient-royal);
+}
+
+@utility animate-rise {
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
